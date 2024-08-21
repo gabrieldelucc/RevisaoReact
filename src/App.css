@@ -1,38 +1,166 @@
-.App {
-  text-align: center;
+/* Estilos gerais */
+.app-container {
+  display: flex; /* Usa o layout flexível para centralizar os itens */
+  flex-direction: column; /* Alinha os itens na coluna */
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; /* Define a altura do container como 100% da altura da viewport */
+  background-color: #6e44ff; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.task-container {
+  background-color: #1e034c; 
+  padding: 30px; 
+  border-radius: 12px; 
+  text-align: center; 
+  width: 600px; 
+  min-height: 350px; /* Altura mínima do container */
+  max-height: 350px; /* Altura máxima do container */
+  overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando o conteúdo excede a altura */
+  margin-bottom: 60px; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  color: white; 
+  font-size: 24px; 
+  margin-bottom: 20px; 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.search-bar {
+  display: flex; /* alinhar o campo de busca e o ícone */
+  justify-content: center; 
+  margin-bottom: 20px; 
 }
 
-.App-link {
-  color: #61dafb;
+input[type="text"] {
+  padding: 8px; 
+  border-radius: 8px; 
+  border: 2px solid white; 
+  outline: none; /* Remove o contorno padrão */
+  background-color: transparent; 
+  color: white; 
+  width: 300px; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type="text"]::placeholder {
+  color: white; 
+}
+
+.task-item {
+  display: flex; 
+  align-items: center; /* Alinha os itens */
+  justify-content: space-between; /* Distribui os itens com espaço entre eles */
+  background-color: white; 
+  padding: 10px; 
+  border-radius: 8px; 
+  margin-bottom: 10px; 
+  margin-top: 0; 
+  color: black; 
+}
+
+.task-actions button {
+  background: none; /* Remove o fundo padrão*/
+  border: none; /* Remove a borda padrão */
+  color: white; 
+  cursor: pointer; /* Altera o cursor para indicar que o botão é clicável */
+  margin-left: 10px; 
+}
+
+.new-task-btn {
+  background-color: transparent; 
+  border: 2px solid white; 
+  color: white; 
+  padding: 10px 20px; 
+  border-radius: 8px;
+  cursor: pointer; /* Altera o cursor para indicar que o botão é clicável */
+  width: 200px; 
+  position: relative; /* Permite posicionar o botão em relação ao seu container */
+  bottom: 40px; 
+  right: -200px; 
+}
+
+.new-task-btn:hover {
+  background-color: #4b3a9e; 
+}
+
+/* Estilos do modal */
+.modal-background {
+  position: fixed; /* Posiciona o modal fixo na tela */
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro semi-transparente */
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.modal-container {
+  background-color: #1e034c; 
+  padding: 30px; 
+  border-radius: 12px; 
+  text-align: center; 
+  width: 400px; 
+}
+
+.modal-container h2 {
+  color: white; 
+  margin-bottom: 20px; 
+}
+
+textarea {
+  width: 100%; 
+  height: 100px; 
+  padding: 10px; 
+  border-radius: 8px; 
+  border: none; 
+  outline: none; 
+  margin-bottom: 20px; 
+}
+
+.confirm-btn {
+  background-color: #6e44ff; 
+  color: white; 
+  padding: 10px 20px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  border: none; 
+}
+
+.highlight {
+  color: #6e44ff; 
+}
+
+/* Ajustes para a barra de pesquisa */
+.search-bar {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-bottom: 20px; 
+  position: relative; 
+}
+
+.search-icon {
+  width: 20px; 
+  height: 20px; 
+  right: -310px; 
+  cursor: pointer; 
+  position: relative; 
+}
+
+/* Estilo para tarefas completadas */
+.task-item.completed {
+  background-color: #6e44ff; 
+  color: white; 
+}
+
+
+.task-item.completed .task-actions button img {
+  filter: brightness(1000); /* Aumenta o brilho dos ícones */
+}
+
+/* Estilo específico para o dia na data */
+.date-day {
+  color: #6e44ff; 
 }
